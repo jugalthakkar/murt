@@ -41,7 +41,6 @@ class exam {
         if ($timeSinceLastUpdateInSecs / 60 < 2) {
             return;
         }
-        global $database;
         require_once("myCurl.php");
         $examid = $maxid = self::FindLastid();
         do {
@@ -124,7 +123,11 @@ class exam {
     }
 
     public static function FindLastid() {
-        return R::getCell("SELECT MAX(exam_id) FROM " . self::$tableName);
+        $lastId = R::getCell("SELECT MAX(exam_id) FROM " . self::$tableName);
+        if ($lastId == null) {
+            $lastId = START_EXAM_ID;
+        }
+        return $lastId;
     }
 
     public static function FindFirstid() {

@@ -1,8 +1,6 @@
 <?php
 
-if(!defined("WEB_ROOT")){
-    define("WEB_ROOT", "http://muresulttracker.tk/");
-}
+
 if(!defined("DB_SERVER")){
     define("DB_SERVER", "localhost");
 }
@@ -15,9 +13,6 @@ if(!defined("DB_USER")) {
 }
 if(!defined("DB_PASS")) {
     define("DB_PASS", "secretpassword");
-}
- if(!defined("PUBLISH_TWITTER")) {
-    define("PUBLISH_TWITTER", true);
 }
 
 
