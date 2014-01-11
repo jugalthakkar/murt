@@ -3,7 +3,7 @@ require_once("../includes/mobile_device_detect.php");
 mobile_device_detect(true,true,true,true,true,true,true,'http://murt.tk/',false);
 require_once("../includes/initialize.php");
 require_once("../includes/PageSections.php");
-spitPageHeader("Silverlight"); ?>
+spitPageHeader("Rich UI"); ?>
 <script type="text/javascript">
     function onSilverlightError(sender, args) {
         var appSource = "";
@@ -41,7 +41,7 @@ spitPageHeader("Silverlight"); ?>
     }
 </script>
 
-<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" height="400px" width="450px" >
+<object data="data:application/x-silverlight-2," type="application/x-silverlight-2" height="400px" width="470px" >
     <param name="source" value="../SLFinal/MU.xap?ver=2.3" />
     <param name="onError" value="onSilverlightError" />
     <param name="background" value="white" />

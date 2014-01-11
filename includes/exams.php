@@ -1,120 +1,151 @@
 <?php
-require_once('DBEntityTemplate.php');
+
 require_once("meta.php");
 require_once("TwitterWrapper.php");
 
+class exam {
 
-class exam extends DBEntityTemplate {
-    public static $counter=0;
-
-    protected static function getTableName() {
-        return "exams";
-    }
-
-    protected static function getDBFields() {
-        return  array('Id', 'ExamName', 'Discovered');
-    }
-
+    public static $counter = 0;
+    private static $tableName = "exams";
+    public $Id;
     public $ExamName;
     public $Discovered;
 
+    public function create() {
+        $exam = R::dispense(self::$tableName);
+        $exam->name = $this->ExamName;
+        $exam->discovered = $this->Discovered;
+        $exam->exam_id = $this->Id;
+        R::store($exam);
+    }
+
     public function getURL() {
-        return self::getURLforid($this->Id);
+        return WEB_ROOT . 'result/' . $this->Id . '/' . $this->prettifyName() . '/';
+//        return self::getURLforid($this->Id);
     }
 
     private static function getURLforid($eid) {
-        return  WEB_ROOT . 'ExamDetails.php?exam_id=' . $eid;
+        return WEB_ROOT . 'exams/' . $eid . '/';
+    }
+
+    private function prettifyName() {
+        $temp = str_replace('.', '', $this->ExamName);
+        $temp = preg_replace("/[^a-zA-Z0-9 ]/", ' ', $temp);
+        $temp = preg_replace('/\s+/', ' ', $temp);
+        return urlencode(str_replace(' ', '-', trim($temp)));
     }
 
     public static function updateOnline() {
-        $currTime=time();
-        $lastUpdateTime=meta::getByKey("last_update_time");
-        $timeSinceLastUpdateInSecs=$currTime-$lastUpdateTime->MetaValue;
-        if($timeSinceLastUpdateInSecs/60<2) {
+        $currTime = time();
+        $timeSinceLastUpdateInSecs = $currTime - meta::getValue("last_update_time");
+        if ($timeSinceLastUpdateInSecs / 60 < 2) {
             return;
         }
         global $database;
         require_once("myCurl.php");
-        $examid=$maxid=self::FindLastid();
+        $examid = $maxid = self::FindLastid();
         do {
             $examid++;
-            $URL="http://results.mu.ac.in/choose_nob.php?exam_id=" . $examid;
-            $curl=new mycurl($URL);
+            $URL = "http://results.mu.ac.in/choose_nob.php?exam_id=" . $examid;
+            $curl = new mycurl($URL);
             $curl->createCurl();
-            $domEle=str_get_html($curl->__tostring());
-            $eles=$domEle->find('font[color=#blue]');
-            $count=count($eles);
-            foreach($eles as $ele) {
-                $exam=new exam();
-                $exam->Id=$examid;
-                $temp=str_replace("Results for ", "", $ele->innertext);
-                $exam->ExamName=trim(str_replace(" held on  ", "", $temp));
-                $exam->Discovered=time();
+            $domEle = str_get_html($curl->__tostring());
+            $eles = $domEle->find('font[color=#blue]');
+            $count = count($eles);
+            foreach ($eles as $ele) {
+                $exam = new exam();
+                $exam->Id = $examid;
+                $temp = str_replace("Results for ", "", $ele->innertext);
+                $exam->ExamName = trim(str_replace(" held on  ", "", $temp));
+                $exam->Discovered = time();
                 $exam->create();
-                $exam->Id=$examid;
+                $exam->Id = $examid;
                 $exam->tweetMe();
             }
-        }while($count>0);
-        $lastUpdateTime->MetaValue=time();
-        $lastUpdateTime->save();
+        } while ($count > 0);
+        meta::update('last_update_time', time());
         return $maxid;
     }
 
     public static function GetLatestResultsByCount($count) {
         exam::updateOnline();
-        $sql="SELECT * FROM " . static::getTableName() . " ORDER BY id DESC LIMIT " . $count;
-        return self::find_by_sql($sql);
+
+        $results = R::findAll(self::$tableName, "ORDER BY exam_id DESC LIMIT " . $count);
+        return self::transformDBEntities($results);
     }
 
     public static function GetLatestResultsAfterId($ID) {
         exam::updateOnline();
-        $sql="SELECT * FROM " . static::getTableName() . " WHERE id > " . $ID . " ORDER BY id DESC";
-        return self::find_by_sql($sql);
+        $results = R::find(self::$tableName, "exam_id > " . $ID . " ORDER BY exam_id DESC");
+        return self::transformDBEntities($results);
     }
 
-    public static function GetLatestResultsAfterIdByCount($ID,$count) {
+    public static function GetAll() {
         exam::updateOnline();
-        $sql="SELECT * FROM " . static::getTableName() . " WHERE id between " . ($ID+1) . " AND " . ($ID+$count) . " ORDER BY id DESC";
-        return self::find_by_sql($sql);
+        $results = R::findAll(self::$tableName, " ORDER BY exam_id DESC");
+        return self::transformDBEntities($results);
+    }
+
+    public static function GetByID($exam_id) {
+        exam::updateOnline();
+        $results = self::transformDBEntities(R::find(self::$tableName, " exam_id=:examID ",array(":examID"=>$exam_id)));
+        return array_shift($results);
+    }
+
+    public static function GetLatestResultsAfterIdByCount($ID, $count) {
+        exam::updateOnline();
+        $results = R::find(self::$tableName, "exam_id between " . ($ID + 1) . " AND " . ($ID + $count) . " ORDER BY exam_id DESC");
+        return self::transformDBEntities($results);
+    }
+
+    private static function transformDBEntities($dbEntities) {
+        $exams = array();
+        foreach ($dbEntities as $dbEntity) {
+            $exam = new exam();
+            $exam->Id = $dbEntity->exam_id;
+            $exam->ExamName = $dbEntity->name;
+            $exam->Discovered = $dbEntity->discovered;
+            array_push($exams, $exam);
+        }
+        return $exams;
     }
 
     public static function getResult($postFields) {
         global $database;
         require_once("myCurl.php");
-        $curl=new mycurl("http://results.mu.ac.in/get_resultb.php");
+        $curl = new mycurl("http://results.mu.ac.in/get_resultb.php");
         $curl->setPost($postFields);
         $curl->createCurl();
-        $domEle=str_get_html($curl->__tostring());
-        $eles=$domEle->find('font[size=-1]');
-        $output=str_replace("<br","\n<br",array_shift($eles));
+        $domEle = str_get_html($curl->__tostring());
+        $eles = $domEle->find('font[size=-1]');
+        $output = str_replace("<br", "\n<br", array_shift($eles));
 
         return trim(strip_tags($output));
     }
 
     public static function FindLastid() {
-        global $database;
-        $row=$database->fetch_array($database->query("SELECT MAX(Id) FROM " . static::getTableName()));
-        return array_shift($row);
+        return R::getCell("SELECT MAX(exam_id) FROM " . self::$tableName);
     }
 
     public static function FindFirstid() {
-        global $database;
-        $row=$database->fetch_array($database->query("SELECT MIN(Id) FROM exams " . static::getTableName()));
-        return array_shift($row);
+        return R::getCell("SELECT MIN(exam_id) FROM " . self::$tableName);
     }
 
     public function tweetMe() {
-        $link=$this->getURL();
-        $linkLen=20; // Twitter converts all links to length 20
-        $examName=str_replace(".", " ",  $this->ExamName);
-        $examName=str_replace("  ", " ",  $examName);
-        $status= "Result for " . $examName . " @ " . $link;
-        $len=strlen($status)-strlen($link)+$linkLen;
-        if($len>140) {
-            $examNameShortened=substr($examName, 0,140-($linkLen+1));
-            $status=$examNameShortened . " " . $link;
+        $link = $this->getURL();
+        $linkLen = 20; // Twitter converts all links to length 20
+        $examName = str_replace(".", " ", $this->ExamName);
+        $examName = str_replace("  ", " ", $examName);
+        $status = "#MumbaiUniversity #Result for #" . str_replace("-", "", $this->prettifyName()) . " @ " . $link;
+        $len = strlen($status) - strlen($link) + $linkLen;
+        if ($len > 140) {
+            $examNameShortened = substr($examName, 0, 140 - ($linkLen + 1));
+            $status = $examNameShortened . " " . $link;
         }
         TwitterWrapper::tweet($status);
     }
+
 }
+
+exam::updateOnline();
 ?>

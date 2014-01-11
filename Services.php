@@ -18,11 +18,11 @@ if(isset($_GET['s'])) {
         }elseif($startId>0) {
             $exams=exam::GetLatestResultsAfterId($startId);
         }else {
-            $exams=exam::find_all();
+            $exams=exam::GetAll();
         }
+        //header('Content-type: application/json');
         echo json_encode($exams);
-        ob_end_flush();
-        $database->close_connection();
+        require_once("includes/teardown.php");
     }else if($service=='result') {
         require_once("includes/initialize.php");
         require_once("includes/exams.php");
@@ -38,14 +38,14 @@ if(isset($_GET['s'])) {
             $response=array("result"=>$result);
 
         echo json_encode($response);
-        ob_end_flush();
-        $database->close_connection();
+        require_once("includes/teardown.php");
     }
     else if($service=='update') {
         require_once("includes/initialize.php");
         require_once("includes/exams.php");
         exam::updateOnline();
         echo "Updated: " .  date('l jS \of F Y h:i:s A');
+        require_once("includes/teardown.php");
     }
 }
 ?>

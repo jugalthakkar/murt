@@ -2,7 +2,7 @@
 require_once("../includes/initialize.php");
 require_once("../includes/exams.php");
 require_once("../includes/PageSections.php");
-$Maxcount=10;
+$minId=-1;
 if(isset($_GET['count'])) {
     $Maxcount=$_GET['count'];
 }
@@ -14,7 +14,7 @@ spitPageHeader("HTML"); ?>
         <tbody>
             <tr id="tHeader"><th>Exam Link</th><th style="width: 100px;">Discovery</th></tr>
             <?php
-            $exams=exam::GetLatestResultsByCount($Maxcount);
+            $exams=exam::GetLatestResultsAfterId($minId);
             foreach($exams as $exam) {
                 ?>
             <tr class="examRow" >

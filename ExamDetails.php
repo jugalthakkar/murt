@@ -8,7 +8,7 @@ if(isset($_GET["exam_id"]))
 if($id==null){
 	$id=exam::FindLastid();
 }
-$exam=exam::find_by_id($id);
+$exam=exam::GetByID($id);
 if($exam==null){
 	$exam=new exam();
 	$exam->Id=1;
@@ -16,7 +16,7 @@ if($exam==null){
 }
 spitPageHeader($exam->ExamName); ?>
 <h3>Enter Exam Details</h3>
-<form action="showResult.php" method="post" >
+<form action="<?php echo WEB_ROOT; ?>showResult.php" method="post" >
     <table>
 	<tr>
             <td>Exam</td>

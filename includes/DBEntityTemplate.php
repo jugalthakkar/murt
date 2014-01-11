@@ -11,8 +11,8 @@
  */
 abstract class DBEntityTemplate {
 
-    protected static abstract function getTableName();
-    protected static abstract function getDBFields();
+    protected static function getTableName(){}
+    protected static function getDBFields(){}
 
 
     public $Id;

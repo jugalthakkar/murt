@@ -1,52 +1,46 @@
 <?php
-require_once('DBEntityTemplate.php');
+
+require_once('rb.php');
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
-*/
+ */
 
 /**
  * Description of meta
  *
  * @author Jugal
  */
-class HitCounter extends DBEntityTemplate {
-    
+class HitCounter {
 
-    protected static function getTableName() {
-        return "hit_counts";
-    }
-    protected static function getDBFields() {
-        return array('Id','URI', 'Count');
-    }
+    private static $tableName = "hitcounts";
 
-    public $URI;
-    public $Count;
-    static function getHitCountForURI($uri) {
-        $sql="SELECT * FROM `" . static::getTableName() . "` WHERE `URI`='" . $uri . "'";
-        $hitCounts = array_shift(self::find_by_sql($sql));
-        if($hitCounts!=null) {
-            $hitCounts->Count++;
-            $hitCounts->save();
-            return $hitCounts->Count;
+    static function getHitCountForURI($uri) {               
+        $counter = R::findOne(self::$tableName, "uri=:uri", array(':uri' => $uri));
+        if ($counter == null) {
+            $counter = R::dispense(self::$tableName);
+            $counter->uri = $uri;
+            $counter->count = 1;
+        } else {
+            $counter->count++;
         }
-        $hitCounts=new HitCounter();
-        $hitCounts->URI=$uri;
-        $hitCounts->Count=1;
-        $hitCounts->save();
-        return $hitCounts->Count;
+        R::store($counter);        
+        return $counter->count;        
+        //return array_shift($results);
     }
 
     public static function getTotalHits() {
-        $sql="SELECT SUM(`Count`) FROM " . static::getTableName();
-        global $database;
-        $result=$database->fetch_array($database->query($sql));
-        return array_shift($result);
+        R::setup('mysql:host=' . DB_SERVER . ';dbname=' . DB_NAME, DB_USER, DB_PASS);
+        $sql = "SELECT SUM(`Count`) FROM " . self::$tableName;
+        $count= R::getCell($sql);        
+        R::close();
+        return $count;
     }
 
     public static function getHitCount() {
         return self::getHitCountForURI($_SERVER['PHP_SELF']);
     }
+
 }
 
 ?>

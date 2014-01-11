@@ -16,6 +16,9 @@ if(!defined("DB_USER")) {
 if(!defined("DB_PASS")) {
     define("DB_PASS", "secretpassword");
 }
+ if(!defined("PUBLISH_TWITTER")) {
+    define("PUBLISH_TWITTER", true);
+}
 
 
 ?>

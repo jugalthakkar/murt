@@ -23,6 +23,5 @@ spitPageHeader($title); ?>
     ?>
 </p>
 <?php spitPageFooter();
-ob_end_flush();	
-$database->close_connection();
+require_once './includes/teardown.php';
 ?>
