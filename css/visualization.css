@@ -1,0 +1,21 @@
+/* 
+    Document   : analytics
+    Created on : Jan 6, 2014, 1:43:25 AM
+    Author     : Jugal
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+root { 
+    display: block;
+}
+
+.resultSet{
+    max-height:300px;
+    overflow-y:auto;
+}
+
+.chartContainer{
+    height:500px;
+    
+}
