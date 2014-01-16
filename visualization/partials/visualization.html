@@ -12,13 +12,13 @@
     </div>
 </div>
 
-<div class="row" ng-cloak>
+<div class="row">
 
-    <tabset>
+    <tabset ng-show="loaded">
         <tab ng-repeat="tab in tabs" heading="{{tab.header}}" active="tab.active" disabled="tab.disabled" select="showTab(tab)">            
             <div murt-chart results="selectedResultsFiltered" config="tab.config" ></div>
         </tab>
-        <tab select="disableStacking()">
+        <tab select="disableStacking()" >
             <tab-heading>
                 <span class="glyphicon glyphicon-plus"></span>
             </tab-heading>

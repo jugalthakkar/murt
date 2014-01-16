@@ -38,7 +38,7 @@ $title = "Visualization";
 
         <script src="<?php echo WEB_ROOT; ?>JS/lib/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>    
-    <body <?php
+    <body  <?php
     if ($ngAppName) {
         echo 'ng-app="' . $ngAppName . '"';
     }
@@ -46,7 +46,7 @@ $title = "Visualization";
         <!--[if lt IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-        <div ng-cloak class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -68,7 +68,7 @@ $title = "Visualization";
             </div>
         </div>
 
-        <div ng-cloak class="container">
+        <div class="container">
             <div class="page-header">
                 <h1>Visualization <small>for the data crunchers</small></h1>
             </div>   
@@ -104,7 +104,7 @@ $title = "Visualization";
 <!--    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-route.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-resource.js" ></script>    -->
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/highstock.src.js" ></script>
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/highstock.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/exporting.js" ></script>
 <!--    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/bootstrap.min.js" ></script>       -->
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/ui-bootstrap-tpls-0.10.0.min.js" ></script>       

@@ -101,6 +101,7 @@ function VisualizationController($scope, ResultService) {
                 tab.config.isStacked = $scope.isStacked;
             });
         });
+        $scope.loaded=true;
     });
 
     function toTitleCase(str) {
