@@ -46,7 +46,7 @@ $title = "Visualization";
         <!--[if lt IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 <![endif]-->
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <div ng-cloak class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -68,69 +68,11 @@ $title = "Visualization";
             </div>
         </div>
 
-        <div class="container" ng-controller="VisualizationCtrl">
+        <div ng-cloak class="container">
             <div class="page-header">
                 <h1>Visualization <small>for the data crunchers</small></h1>
-            </div>
-            <div class="row">
-                <div class="btn-toolbar pull-right" role="toolbar" >
-                    <button class="btn btn-default" ng-click="ToggleStacking()" ng-show="isStackable"><span class="glyphicon glyphicon-stats"></span> {{toggleStackLabel}}</button>
-                    <button class="btn btn-default" ng-click="filter()"><span class="glyphicon glyphicon-filter"></span> Filter Results</button>
-                </div>
-            </div>
-            
-            <div class="row" >
-                <div id="chartNavigator">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#timeline" id="timeline-link" data-toggle="tab" ng-click="showTab('timeline')">Timeline</a></li>         
-                        <li ng-repeat="tab in tabs">
-                            <a href="#{{tab.containerId}}" id="{{tab.containerId}}-link" data-toggle="tab" ng-click="showTab(tab.containerId)">{{tab.header}}
-                            </a>
-                        </li>
-                        <li id="customChartLink"><a href="#customChartContainer" id='customChartContainer-link' data-toggle="tab" ng-click="showTab('customChartContainer')"><span class="glyphicon glyphicon-plus"></span></a></li>
-                    </ul>
-                </div>
-                <div id="chartContainer" >
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="timeline">
-                            <div class="chartContainer"></div>
-                        </div>
-                        <div ng-repeat="tab in tabs" class="tab-pane" id="{{tab.containerId}}">
-                            <div class="chartContainer"></div>
-                        </div>
-                        <div class="tab-pane" id="customChartContainer">
-                            <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <strong>Select custom chart options & hit Go!</strong>
-                                </div>
-                                <div class="panel-body">
-                                    <p><em>I wish to plot Results by</em>                            </p>
+            </div>   
 
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                            {{customGroupDefintion.groupA | uppercase}} <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li ng-repeat="option in groupingOptions" ><a href="#" ng-click="setGroupA(option)">{{option | uppercase}}</a></li>
-                                        </ul>
-                                    </div>
-                                    &AMP;
-                                    <div class="btn-group">
-                                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                            {{customGroupDefintion.groupB | uppercase}} <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu" role="menu">
-                                            <li ng-repeat="option in groupingOptions" ><a href="#" ng-click="setGroupB(option)">{{option | uppercase}}</a></li>
-                                        </ul>                                    
-                                    </div>
-                                    <button type="button" class="btn btn-default btn-success" ng-click="addChart(customGroupDefintion,selectedResultsFiltered)">Go!</span>
-                                    </button>
-                                </div>
-                            </div>                      
-                        </div>
-                    </div>
-                </div>  
-            </div>
             <div ng-view></div>
             <hr>
 
@@ -159,17 +101,25 @@ $title = "Visualization";
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular.min.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-route.min.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-resource.min.js" ></script>    
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/highstock.js" ></script>
+<!--    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular.js" ></script>
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-route.js" ></script>
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/angular-resource.js" ></script>    -->
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/highstock.src.js" ></script>
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/exporting.js" ></script>
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/bootstrap.min.js" ></script>       
+<!--    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/bootstrap.min.js" ></script>       -->
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/lib/ui-bootstrap-tpls-0.10.0.min.js" ></script>       
 
-<!--        <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular.js" ></script>
-<script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-route.js" ></script>
-<script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-resource.js" ></script>-->
+<!--    <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular.js" ></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-route.js" ></script>
+    <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-resource.js" ></script>-->
 
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/visualization.js" ></script>
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/ChartDirectiveController.js" ></script>    
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/directives/chartDirective.js" ></script>    
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/services/ResultServices.js" ></script>
+    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/VisualizationController.js" ></script>
+
     <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/app.js" ></script>
-    <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/services.js" ></script>
+
     <script>
         var _gaq = [['_setAccount', 'UA-30655658-1'], ['_trackPageview']];
         (function(d, t) {

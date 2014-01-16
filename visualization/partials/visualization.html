@@ -1,0 +1,55 @@
+<div class="row">    
+    <div id="messages">
+        <alert ng-repeat="alert in alerts" type="alert.type" close="closeAlert($index)">{{alert.msg}}</alert>
+    </div>                
+    <div class="btn-toolbar pull-right" role="toolbar" >
+        
+        <div class="btn-group" ng-show="isStackable">            
+            <button type="button" class="btn btn-primary" ng-model="isStacked" btn-radio="true">Stacked</button>
+            <button type="button" class="btn btn-primary" ng-model="isStacked" btn-radio="false">Grouped</button>
+        </div>        
+        <button class="btn btn-primary" ng-click="filter()"><span class="glyphicon glyphicon-filter"></span> Filter Results</button>
+    </div>
+</div>
+
+<div class="row" ng-cloak>
+
+    <tabset>
+        <tab ng-repeat="tab in tabs" heading="{{tab.header}}" active="tab.active" disabled="tab.disabled" select="showTab(tab)">            
+            <div murt-chart results="selectedResultsFiltered" config="tab.config" ></div>
+        </tab>
+        <tab select="disableStacking()">
+            <tab-heading>
+                <span class="glyphicon glyphicon-plus"></span>
+            </tab-heading>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <strong>Select custom chart options & hit Go!</strong>
+                </div>
+                <div class="panel-body">
+                    <p><em>I wish to plot Results by</em>                            </p>
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            {{customGroupDefintion.groupA | uppercase}} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="option in groupingOptions" ><a href="#" ng-click="setGroupA(option)">{{option | uppercase}}</a></li>
+                        </ul>
+                    </div>
+                    &AMP;
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                            {{customGroupDefintion.groupB | uppercase}} <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li ng-repeat="option in groupingOptions" ><a href="#" ng-click="setGroupB(option)">{{option | uppercase}}</a></li>
+                        </ul>                                    
+                    </div>
+                    <button type="button" class="btn btn-default btn-success" ng-click="addChart(customGroupDefintion,selectedResultsFiltered)">Go!</span>
+                    </button>
+                </div>
+            </div> 
+        </tab>
+    </tabset>  
+</div>
