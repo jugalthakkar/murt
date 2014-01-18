@@ -157,7 +157,7 @@ var ChartDirectiveController = function($scope) {
                 }
             ],
             chart: {
-                zoomType: 'xy'
+                zoomType: 'x'
             },
             rangeSelector: {
                 selected: 4

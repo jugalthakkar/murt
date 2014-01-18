@@ -114,7 +114,7 @@ $title = "Visualization";
     <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-route.js" ></script>
     <script type="text/javascript" src="http://code.angularjs.org/1.2.7/angular-resource.js" ></script>-->
 
-        <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/ResultFilterController.js" ></script>        
+        <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/resultFilterController.js" ></script>        
         <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/directives/resultFilterDirective.js" ></script>    
         <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/controllers/ChartDirectiveController.js" ></script>    
         <script type="text/javascript" src="<?php echo WEB_ROOT; ?>JS/directives/chartDirective.js" ></script>    

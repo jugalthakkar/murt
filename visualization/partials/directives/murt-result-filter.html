@@ -22,7 +22,7 @@
     </div>
     <div class="panel-body">
         <ul class="list-group resultSet">
-            <li class="list-group-item" ng-animate="'animate'"  ng-repeat="item in searchResults" >
+            <li class="list-group-item filterItems" ng-animate="'animate'"  ng-repeat="item in searchResults" >
                 <strong>{{item.title}}</strong>
                 <input type="checkbox" ng-model="item.selected" class="pull-right col-sm-0" ng-change="updateFilteredItems(item)"/>
             </li>                
