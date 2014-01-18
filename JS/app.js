@@ -1,4 +1,4 @@
-angular.module('visualization', ['ngRoute', 'ResultServices', 'muChartDirective', 'ui.bootstrap']).config(visualizationRouter);
+angular.module('visualization', ['ngRoute', 'ResultServices', 'murtChartDirective','resultFilterDirective', 'ui.bootstrap']).config(visualizationRouter);
 
 function visualizationRouter($routeProvider) {
     $routeProvider.when('/', {

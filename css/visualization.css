@@ -11,7 +11,7 @@ root {
 }
 
 .resultSet{
-    max-height:300px;
+    max-height:600px;
     overflow-y:auto;
 }
 
@@ -23,6 +23,85 @@ root {
     display: none !important;
 }
 
-.nav-tabs a{
+a{
     cursor:pointer;
+}
+
+.panel .badge{
+    margin:8px;
+}
+
+/* Custom container */
+/*.container-full {
+    margin: 0 auto;
+    width: 100%;
+}*/
+
+
+
+@media (min-width: 1400px) {
+    .container {
+        width: 1350px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        width: 1550px;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container {
+        width: 1750px;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        width: 95%;
+    }
+}
+
+/*
+.animate-repeat.ng-leave {
+    -webkit-transition:all linear 0.2s;
+    transition:all linear 0.2s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+    opacity:0;    
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+    opacity:1;    
+}*/
+
+
+.ng-move,
+.ng-enter,
+.ng-leave {
+    -webkit-transition:all linear 0.2s;
+    transition:all linear 0.2s;
+    border-color: black;
+}
+
+.ng-leave.ng-leave-active,
+.ng-move.ng-move-active,
+.ng-enter {
+    opacity: 0;
+    border-color: greenyellow;
+
+
+}
+
+.ng-leave,
+.ng-move,
+.ng-enter.ng-enter-active {
+    opacity: 1;
+    border-color: greenyellow;
 }

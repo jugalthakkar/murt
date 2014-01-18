@@ -12,8 +12,8 @@
 
     <ul class="list-group resultSet">
         <li class="list-group-item" ng-repeat="result in allResultsFiltered">
-            <strong>{{result.ExamName }}</strong> declared on 
-            <strong>{{result.Discovered*1000 |  date:'fullDate'}} </strong>
+            <strong>{{result.ExamName}}</strong> declared on 
+            <strong>{{result.Discovered * 1000|  date:'fullDate'}} </strong>
             <button type="button" class="btn btn-default pull-right" ng-click="addSelection(result.Id)">
                 <span class="glyphicon glyphicon-plus"></span>
             </button></li>                
@@ -21,7 +21,7 @@
     <div class="panel-footer">
         <button type="button" class="btn btn-default" ng-click="addAll()">
             <span class="glyphicon glyphicon-plus"></span> Add All
-
+        </button>
     </div>
 
 </div>

@@ -1,7 +1,7 @@
 'use strict';
 
 var ChartDirectiveController = function($scope) {
-    $scope.getColumnChartOptions = function() {
+    $scope.getColumnChartOptions = (function() {
 
         var weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
         var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -100,31 +100,33 @@ var ChartDirectiveController = function($scope) {
             return series;
         }
 
-
-        var config = $scope.config;
-        var series = getColumnSeries($scope.config, $scope.results);
-        return {
-            title: {
-                text: toTitleCase('Results By ' + config.groupA + ' & ' + config.groupB)
-            },
-            labels: {
-                items: [{
-                        html: toTitleCase('Results By ' + config.groupA),
-                        style: {
-                            left: '75px',
-                            top: '3px',
-                            color: 'black'
-                        }
-                    }]
-            },
-            series: series,
-            xAxis: {
-                categories: categoriesByGroup[config.groupA]
-            }
+        return function() {
+            var config = $scope.config;
+            var series = getColumnSeries($scope.config, $scope.results);
+            return {
+                title: {
+                    text: toTitleCase('Results By ' + config.groupA + ' & ' + config.groupB)
+                },
+                labels: {
+                    items: [{
+                            html: toTitleCase('Results By ' + config.groupA),
+                            style: {
+                                left: '75px',
+                                top: '3px',
+                                color: 'black'
+                            }
+                        }]
+                },
+                series: series,
+                xAxis: {
+                    categories: categoriesByGroup[config.groupA]
+                }
+            };
         };
-    };
+    })();
 
-    $scope.getTimelineOptions = function getTimelineOptions() {
+
+    $scope.getTimelineOptions = function() {
         var timeLineData = _.map($scope.results, function(result) {
             return [parseInt(result.Discovered) * 1000, 1];
         });
@@ -137,15 +139,32 @@ var ChartDirectiveController = function($scope) {
                 {
                     name: 'Results',
                     data: timeLineData,
-                    type: 'area',
+                    type: 'column',
                     dataGrouping: {
                         forced: true,
                         approximation: 'sum',
-                        units: [['day', [1]]]
+                        units: [[
+                                'day',
+                                [1]
+                            ], [
+                                'week',
+                                [1]
+                            ], [
+                                'month',
+                                [1, 3, 6]
+                            ]]
                     }
                 }
             ],
-            chart: {zoomType: 'x'}
+            chart: {
+                zoomType: 'xy'
+            },
+            rangeSelector: {
+                selected: 4
+            },
+            xAxis: {
+                ordinal: false
+            }
         };
     };
 };
