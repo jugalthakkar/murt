@@ -36,6 +36,7 @@ class exam {
     }
 
     public static function updateOnline() {
+        if(!UPDATE_MODE)return;
         $currTime = time();
         $timeSinceLastUpdateInSecs = $currTime - meta::getValue("last_update_time");
         if ($timeSinceLastUpdateInSecs / 60 < 2) {
@@ -68,7 +69,6 @@ class exam {
 
     public static function GetLatestResultsByCount($count) {
         exam::updateOnline();
-
         $results = R::findAll(self::$tableName, "ORDER BY exam_id DESC LIMIT " . $count);
         return self::transformDBEntities($results);
     }
@@ -110,6 +110,15 @@ class exam {
     }
 
     public static function getResult($postFields) {
+        if(!UPDATE_MODE){
+            if(intval($postFields['seat_no'])%3==0){
+                return 'Pass Dude';
+            }else if(intval($postFields['seat_no'])%3==1){
+                return 'Sorry Bro';
+            }else{
+                return 'Unavailable';
+            }
+        }        
         global $database;
         require_once("myCurl.php");
         $curl = new mycurl("http://results.mu.ac.in/get_resultb.php");

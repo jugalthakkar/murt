@@ -1,0 +1,48 @@
+/* Put your CSS here */
+#home .masthead {
+    background-image: url(images/_bg.jpg);
+
+}
+@media only screen and (min-width: 1920px) {
+    .ui.page.grid {
+        width: auto;
+        margin-left: 0em;
+        margin-right: 0em;
+        padding-left: 15%;
+        padding-right: 15%;
+    }
+}
+
+#home .masthead .image {
+    bottom: -15px;
+}
+
+.ui.menu .item{
+    vertical-align: middle;
+}
+
+#home .vertical.segment {
+    padding: 6rem 0rem;
+}
+
+#examInputs > div{
+    max-width: 480px;
+    margin: 10px auto;
+}
+
+
+#result.hidden{
+    display:none;    
+}
+
+#result .hidden{
+    display:none;    
+}
+
+.mobile .ui.icon.header {
+    font-size: 0.8rem;
+}
+.ui.menu .mobile  .item,.ui.menu .mobile.item{
+    padding: 0.2em;
+}
+

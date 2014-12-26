@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg2"
+    sodipodi:docname="graduation.svg"
+    viewBox="0 0 128 128"
+    sodipodi:version="0.32"
+    inkscape:export-xdpi="90"
+    version="1.0"
+    inkscape:output_extension="org.inkscape.output.svg.inkscape"
+    inkscape:export-ydpi="90"
+    inkscape:version="0.46"
+  >
+  <defs
+      id="defs4"
+    >
+    <filter
+        id="filter3443"
+        height="1.6533"
+        width="1.2503"
+        y="-.32663"
+        x="-.12514"
+        inkscape:collect="always"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3445"
+          stdDeviation="1.9634296"
+          inkscape:collect="always"
+      />
+    </filter
+    >
+  </defs
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      guidetolerance="10"
+      pagecolor="#ffffff"
+      gridtolerance="10000"
+      inkscape:window-height="741"
+      inkscape:zoom="1"
+      objecttolerance="10"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="64"
+      inkscape:cy="64"
+      showguides="true"
+      inkscape:window-y="179"
+      inkscape:window-x="492"
+      inkscape:window-width="1026"
+      inkscape:guide-bbox="true"
+      inkscape:pageopacity="0"
+      inkscape:document-units="px"
+  />
+  	  <g        
+        transform="translate(170 0)"
+      >
+  	  <g        
+        transform="scale(-1.3 1.3)"
+      >
+  <g
+      id="layer1"
+      inkscape:label="Layer 1"
+      inkscape:groupmode="layer"
+    >
+    <path
+        id="path3018"
+        sodipodi:nodetypes="ccccsssssssc"
+        style="filter:url(#filter3443);fill-rule:evenodd;fill:#000000;fill-opacity:.72840"
+        d="m60.364 103.58c-5.465 0.42-6.823-3.26-11.495 0.88-1.413 1.42-1.725 4.22-1.334 5.79 2.875 3.85 5.999 2.88 10.605 4.44 2.277 0.57 4.263 0.89 7.117 0.89 2.899 0 4.683 1.44 7.56 0 2.231-1.11 4.291-0.77 6.227-2.22 1.512-1.13 2.226-3.12 2.668-4.89 0.784-3.14-1.876-3.61-3.558-4.45-2.161-1.08-5.906-0.41-7.56 0-1.774 0.44-3.316-2.22-5.782-2.22-2 0-1.06 1.78-4.448 1.78z"
+    />
+    <g
+        id="g3843"
+        transform="matrix(.71211 0 0 .71211 -31.119 -58.882)"
+      >
+
+      <path
+          id="path3845"
+          sodipodi:nodetypes="cccccccc"
+          style="fill-rule:evenodd;stroke:#0e0300;stroke-width:1.4043px;fill:#2b1100"
+          d="m130.68 228.29c-2.77 3.63-6.52 4.5-10.27 5.06-0.7 0.85-0.38 0.34-0.33 1.38 0.28 0.9 0.6 1.78 0.83 2.7 3.24 0.3 6.81 2.24 10.19 1.15 3.55 0.05 7.13-1.19 10.07-3.33 0.68-2.01-0.05-4.73-0.21-6.96-3.27 1.03-6.99 0.86-10.28 0z"
+      />
+      <path
+          id="path3847"
+          sodipodi:nodetypes="ccc"
+          style="stroke:#0e0300;stroke-width:1.4043px;fill:none"
+          d="m120.91 235.67c3.82-0.66 7.64 1.85 11.62 1.32 3.7-0.12 5.62-2.81 8.33-2.99"
+      />
+      <path
+          id="path3849"
+          sodipodi:nodetypes="cccccccc"
+          style="fill-rule:evenodd;stroke:#0e0300;stroke-width:1.4043px;fill:#2b1100"
+          d="m143.87 228.91c-2.73 4.02-7.31 5.46-10.39 6.5-0.5 1.06-0.48 0.66-0.62 1.81 0.17 1.53 1.06 2.49 2.18 3.43 3.02 1.17 6.38 0.26 9.46-0.31 2.69-0.09 5.87-0.71 7.75-2.77 2.9-2.71 2.42-5.29 2.11-9.07-3.49 0.26-6.98 0.41-10.49 0.41z"
+      />
+      <path
+          id="path3851"
+          sodipodi:nodetypes="cccccccccccccc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m122.38 183.19c-4 5.32-0.09 9.48-0.59 13.96-0.91 1.93-1.46 3.19-3.08 4.55-1.78 0.08-3.08 0.98-3.53 2.5 1.04 1.05 2.53 0.69 3.97 0.59 0.42 1.6-1.91 3.68-2.06 5.58 2.09 2.5 3.84-1.63 3.97-3.52 0.25 1.81-0.77 4.77-0.59 6.02 2.39 0.47 3.22-3.54 3.23-5.58-0.05 2.23-1.16 4.48 1.47 4.4 1.81-1.33 1.38-3.8 1.62-5.87 0.71-3.26 2.03-6.35 2.35-9.7-0.36-4.91 2-11.02-0.15-15.57-3.16-1.59-4.26 1.35-6.61 2.64z"
+      />
+      <path
+          id="path3853"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#62002a;stroke-width:1.4043px;fill:#a30045"
+          d="m130.23 164.32c-3.17 3.29-6.31 6.29-7.68 10.58-1.7 3.03-2.77 20.78-3.15 24.3 4.66 0.88 4.08 2.43 8.71 3.06 2.11-5.62 7.41-28.58 7.52-34.5"
+      />
+      <path
+          id="path3855"
+          sodipodi:nodetypes="cccccccc"
+          style="fill-rule:evenodd;stroke:#00192e;stroke-width:1.4043px;fill:#00325c"
+          d="m143.68 202.88c-0.17 0.91-2.37 2.12-2.05 3.67-0.58 4.13 1.8 8.47 1.46 13.52 0.61 2.59-2.21 6.84-0.44 8.67 3.1 2.33 10.78 2.22 12.49-0.74-1.19-4.53-2.46-8.8-1.76-13.51 0.07-4.46 0.9-8.77 0.73-13.23-2.54-0.94-8.82-0.26-10.43 1.62z"
+      />
+      <path
+          id="path3857"
+          sodipodi:nodetypes="cccccccc"
+          style="fill-rule:evenodd;stroke:#00192e;stroke-width:1.4043px;fill:#00325c"
+          d="m130.61 202.73c-0.17 0.92-2.22 3.44-1.91 5 1.11 3.28 2.43 6.2 1.61 9.55 0.02 3.28-3.52 9.19-1.17 11.6 3.34 1.33 9.2 1.73 12.04-1.17-1.46-4.53-1.57-8.66-0.88-13.37 0.04-4.47 0.91-8.73 0.74-13.22-2.55-0.95-8.83-0.26-10.43 1.61z"
+      />
+      <path
+          id="path3859"
+          sodipodi:nodetypes="cccccccccccc"
+          style="fill-rule:evenodd;stroke:#62002a;stroke-width:1.4043px;fill:#a30045"
+          d="m161.83 223.2c-3.3-4.07-2.97-26.78-2.55-31.44-1.44-5.82 2.3-12.04 1.07-17.87-0.55-3.65-1.76-6.93-3.6-10.12-2.09-2.83-4.89-4.45-8.45-4.63-4.57 0.67-9.18 0.05-13.72 1.04-3.34 1.46-5.65 3.87-6.02 7.48-0.16 3.26-0.68 5.76-2.19 8.7-0.46 5.23-2.19 10.4-1.46 15.65 1.06 6.1-2.24 28.46-1.57 34.55 5.27-3.02 14.75-2.36 20.73-3.03 5.02-1.79 14.65 3.47 17.76-0.33z"
+      />
+      <path
+          id="path3861"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#675d1b;stroke-width:1.4043px;fill:#dfd591"
+          d="m143.38 202.12c-3.15 0.14-4.32 1.96-5.13 5.76l14.25 3.87 1.5-3.87-10.62-5.76z"
+      />
+      <path
+          id="path3863"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#675d1b;stroke-width:1.4043px;fill:#dfd591"
+          d="m143.75 202.38c1.5 4.07-0.91 6.06-4.37 7.5 10.46 3.03 21.21 4.1 31.37 9.24 0.92-1.37 0.91-3.21 0.5-5.24l-27.5-11.5z"
+      />
+      <path
+          id="path3865"
+          sodipodi:nodetypes="cccccccccccccccc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m158.67 193.92c0.65 3.83 0.43 7.82-1.32 11.31-1.29 1.33-3.16-0.6-4.12 1.32 0.54 1.46 3.61-0.08 3.53 2.5-1.11 2.18-3.85 4.27-1.66 6.71 1.43-0.73 3.03-2.62 3.42-4.07 0.16 1.69-0.89 5.55 2.29 4.18 1.54-1.16 0.41-3.35 0.5-5.06 1.24 1.91 1.48 6.77 3.11 3.47 0.16-1.48-0.42-4.51-1.2-5.67-0.2-1.49 0.34-3.05 0.59-4.56 1.87-3.16 3.14-6.39 3.67-9.99-2.13-2.8-0.69-7.03-2.49-9.84-0.51-1.26-0.99-2.34-1.77-3.38-3.31-0.95-2.64-2.63-4.13 0.43 0.91 5.39 2.5 7.66-0.42 12.65z"
+      />
+      <path
+          id="path3867"
+          sodipodi:nodetypes="ccccccc"
+          style="fill-rule:evenodd;stroke:#62002a;stroke-width:1.4043px;fill:#a30045"
+          d="m148.92 170.24c0.16 2.99 7.83 12.53 8.8 15.32 0.78 2.87-1.32 15.6-1.29 18.54 4.94-0.52 6.16 3.06 11.1 1.5-0.52-2.43 3.23-14.36 2.76-16.81-0.79-3.23-7.13-18.58-8.56-21.36-1.73-2.43-5.27-2.84-8.23-1.97"
+      />
+      <path
+          id="path3869"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m133.77 162.64c-5.25 14.35 11.81 4.06 15.76-1.51-1.43-2.91-2.45-6.41-5.58-7.93-2.67-0.31-5.25 0.43-7.79 1.17-2.04 1.59-2.84 6.23-2.39 8.27z"
+      />
+      <path
+          id="path3871"
+          sodipodi:nodetypes="ccccccccc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m137.02 109.34c-12.29-0.07-17.15 8.03-17.31 18.57 0 2.21 1.02 6.55 1.57 8.73-0.26 4.31-1.33 7.56-0.06 11.76 1.48 5.94 5.47 9.11 11.22 10.39 5.11-0.1 10.79-2.57 14.62-6.14 5.48-4.48 6.39-11.77 8.41-18.4 0.71-6.34-0.45-11.94-2.25-17.85-2.5-6.46-10.08-7.97-16.2-7.06z"
+      />
+      <path
+          id="path3873"
+          sodipodi:nodetypes="cccsccccc"
+          style="fill-rule:evenodd;stroke:#603b00;stroke-width:1.4043px;fill:#a05a2c"
+          d="m121.53 118.95c1.4-10.96 29.55-19.237 32.2-7.55 11.6 3.69 3.4 25.15 0.7 32.43-1.61-0.01-3.44-0.21-3.18-1.02 3.28-10.31 3.97-11.46-0.52-13.52-2.27-0.57-3.03 1.17-4.99 1.66-4.15-2.67 0.05-10.87-6.65-13.72-3.27 1.33-7.41 3.37-10.8 0-2.9 0-4.29 2.71-6.76 1.72z"
+      />
+      <path
+          id="path3875"
+          sodipodi:nodetypes="cccc"
+          style="fill-rule:evenodd;stroke:#333333;stroke-width:1.4043px;fill:#ffffff"
+          d="m130.49 128.5c-1.61 3.53-0.36 5.59 3.07 5.08 1.06 0.47 2.53-2.11 2.02-3.82-0.94-2.93-2.93-4.6-5.09-1.26z"
+      />
+      <path
+          id="path3877"
+          sodipodi:nodetypes="ccc"
+          style="fill-rule:evenodd;stroke:#333333;stroke-width:1.4043px;fill:#ffffff"
+          d="m123 126.74c-2.77 0.62-3.63 2.15-3.09 5.29 3.2 5.9 8.83-2 3.09-5.29z"
+      />
+      <path
+          id="path3879"
+          sodipodi:nodetypes="ccc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m125.35 134.82c-0.74 4.25-3.8 3.57-3.68 8.37 3.5-0.7 5.81 0.19 6.17-2.35"
+      />
+      <path
+          id="path3881"
+          sodipodi:nodetypes="cc"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m148.12 131.15c6.89-2.74 5.68 7.47 0.59 6.46"
+      />
+      <path
+          id="path3883"
+          sodipodi:nodetypes="cs"
+          style="fill-rule:evenodd;stroke:#3f2d10;stroke-width:1.4043px;fill:#ffccaa"
+          d="m149.44 132.76c1-1.75 3.64 1.39 0 3.09"
+      />
+      <path
+          id="path3885"
+          sodipodi:nodetypes="cc"
+          style="stroke:#3f2d10;stroke-width:1.4043px;fill:none"
+          d="m123.73 149.07c0.25 3.9 7.8 5 11.9-2.79"
+      />
+      <path
+          id="path3887"
+          sodipodi:nodetypes="cssc"
+          style="fill-rule:evenodd;stroke:#000000;stroke-width:1.4043px;fill:#000000"
+          d="m132.78 130.27c0.46-0.42-1.47-0.76-1.32 1.62 0.12 1.84 2.05 1.25 2.79 0.73 1.49-1.04-0.75-2.72-1.47-2.35z"
+      />
+      <path
+          id="path3889"
+          sodipodi:nodetypes="cssc"
+          style="fill-rule:evenodd;stroke:#000000;stroke-width:1.4043px;fill:#000000"
+          d="m121.37 131.03c0.54-1.12-2.12-1.1-1.32 1.47 0.55 1.77 2.54 0.72 2.64 0.59 1.1-1.43-0.06-3.65-1.32-2.06z"
+      />
+      <path
+          id="path3895"
+          sodipodi:nodetypes="ccc"
+          style="stroke:#0e0300;stroke-width:1.4043px;fill:none"
+          d="m133.69 238.47c3.68 0.79 7.67 1.2 10.52 0.07 3.43-0.45 6.48-1.16 9.64-4.54"
+      />
+      <path
+          id="path3897"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#300009;stroke-width:1.4043px;fill:#ac0127"
+          d="m123.75 106.75l-4.5 14.5c14.75 3.17 31.25 1.97 40.75-2.25l-5.25-16-31 3.75z"
+      />
+      <path
+          id="path3899"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#300009;stroke-width:1.4043px;fill:#ac0127"
+          d="m131.56 95.318l-22 18.002 39.98 4.12 17.52-19.122-35.5-3z"
+      />
+      <path
+          id="path3901"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#62002a;stroke-width:1.4043px;fill:#a30045"
+          d="m139.65 129.59l1.06 9.9c3.48 0.48 5.84-1.55 7.43-5.31l-6.37-5.12-2.12 0.53z"
+      />
+      <path
+          id="path3903"
+          sodipodi:nodetypes="ccccc"
+          style="fill-rule:evenodd;stroke:#300009;stroke-width:1.4043px;fill:#ac0127"
+          d="m135.76 104.48c-4.98 8.34-2.09 17.17 3.54 26.17 1.59 0.59 2.53-0.13 3.18-1.42-7.14-8.99-6.04-15.73-2.58-24.06-0.53-1.36-1.61-1.98-4.14-0.69z"
+      />
+      <path
+          id="path3913"
+          sodipodi:nodetypes="ccc"
+          style="stroke:#675d1b;stroke-width:1.4043px;fill:none"
+          d="m138.25 208.12c1.76-0.87 3.26-1.84 3.37-3.37l2.63 1.25"
+      />
+	  </g>
+    </g
+    >
+  </g
+  >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Comic characters: Graduated</dc:title
+        >
+        <dc:date
+          >2009-03-05T15:41:53</dc:date
+        >
+        <dc:description
+          >Comic characters: a graduated student</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/21909/comic-characters:-graduated-by-nicubunu</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >nicubunu</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >cartoon</rdf:li
+            >
+            <rdf:li
+              >character</rdf:li
+            >
+            <rdf:li
+              >comic</rdf:li
+            >
+            <rdf:li
+              >funny</rdf:li
+            >
+            <rdf:li
+              >guy</rdf:li
+            >
+            <rdf:li
+              >human</rdf:li
+            >
+            <rdf:li
+              >people</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>
