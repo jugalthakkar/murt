@@ -2,6 +2,31 @@
 
 
 $(function() {
+
+    var WEB_ROOT = $('#WEB_ROOT').val();
+
+    function prettifyName(name) {
+        name = name.replace(/\./g, '');
+        name = name.replace(/[^a-zA-Z0-9 ]/g, ' ');
+        name = name.replace(/\s+/g, ' ');
+        name = name.trim();
+        name = name.replace(/\s+/g, '-');
+        return encodeURIComponent(name);
+    }
+
+    function updateMeta(title, description, url, image) {
+        title = title + ' | Mumbai University Result Tracker | Jugal Thakkar';
+        document.title = title;
+        Ember.$('meta[name=canonical]').attr('href', url);
+        Ember.$('meta[name=description]').attr('content', description);
+
+        Ember.$('meta[property=og\\:title]').attr('content', title);
+        Ember.$('meta[property=og\\:description]').attr('content', description);
+        Ember.$('meta[property=og\\:url]').attr('content', url);
+        Ember.$('meta[property=og\\:image]').attr('content', WEB_ROOT + 'images/fb_' + image + '.png');
+    }
+
+
     function scrollToAnchor(aid) {
         var aTag = $(aid);
         $('html,body').animate({scrollTop: aTag.offset().top}, 'slow');
@@ -13,7 +38,6 @@ $(function() {
         return  new Date(parseInt(Ember.get(options.data.view.content, property)) * 1000).toString();
     });
 
-    var WEB_ROOT = $('#WEB_ROOT').val();
 
     /************************ Application Start *******************************************/
 
@@ -61,9 +85,10 @@ $(function() {
         location: 'hashbang'
     });
     Murt.Router.map(function() {
-        this.resource('android', {path: '/android'});
-        this.resource('loading', {path: '/loading'});
-        this.resource('results', {path: '/results'});
+        this.route('android', {path: '/android'});
+        this.route('loading', {path: '/loading'});
+        this.route('visualization', {path: '/visualization'});
+        this.resource('results', {path: '/results/:count'});
         this.resource('result', {path: '/result/:Id/:ExamName'});
     });
 
@@ -73,6 +98,7 @@ $(function() {
     });
     Murt.ApplicationRoute = Ember.Route.extend({
         model: function() {
+            updateMeta('Latest Results', 'Track the latest Mumbai University Results as they happen. We have a history of being faster than the university site.Just Saying!', WEB_ROOT + '#!/', 'index');
             return {
                 currentYear: new Date().getFullYear(),
                 androidDownloadCount: $('#androidDownloadCount').val(),
@@ -91,13 +117,9 @@ $(function() {
         setupScrollToOutlet: function() {
             Ember.run.scheduleOnce('afterRender', this,
                 function() {
-
                     $('.ui.dropdown').dropdown({on: 'click'});
-                    //$('#fixedMenu').prependTo('body');
-                    //$('.ui.form').form(validationRules, {on: 'blur'});
-
-                    $('.masthead .information').transition('scale in', 1000);
                     if (!Murt.landingPage) {
+                        $('.masthead .information').transition('scale in', 1000);
                         Murt.landingPage = window.location;
                     } else {
                         scrollToAnchor('#outlet');
@@ -123,7 +145,8 @@ $(function() {
     }, Murt.ScrollToMixin);
     Murt.IndexRoute = Ember.Route.extend({
         model: function() {
-            return JSON.parse($('#lastTenResults').val());
+            updateMeta('Latest Results', 'Track the latest Mumbai University Results as they happen. We have a history of being faster than the university site.Just Saying!', WEB_ROOT + '#!/', 'index');
+            return Ember.$.getJSON(WEB_ROOT + 'Services.php?s=get&count=' + 10);
         }
     });
 
@@ -142,8 +165,9 @@ $(function() {
     }, Murt.ScrollToMixin);
 
     Murt.ResultsRoute = Ember.Route.extend({
-        model: function() {
-            return $.getJSON(WEB_ROOT + 'Services.php?s=get&count=300');
+        model: function(params) {
+            updateMeta('All Results', 'View all of the latest results at once.', WEB_ROOT + '#!/results/300', 'results');
+            return Ember.$.getJSON(WEB_ROOT + 'Services.php?s=get&count=' + params.count);
         }
     });
 
@@ -188,6 +212,7 @@ $(function() {
 
     Murt.ResultRoute = Ember.Route.extend({
         model: function(params) {
+            updateMeta(params.ExamName, 'Result for ' + params.ExamName, WEB_ROOT + '#!/result/' + params.Id + '/' + params.ExamName, 'result');
             return {
                 name: params.ExamName,
                 id: params.Id,
@@ -268,6 +293,7 @@ $(function() {
 
     Murt.AndroidRoute = Ember.Route.extend({
         model: function() {
+            updateMeta('MURT Android App', 'Mumbai University Result Tracker\'s very own Android App. Download Here.', WEB_ROOT + '#!/android', 'android');
             return {androidDownloadCount: this.modelFor('application').androidDownloadCount};
         }
     });
@@ -275,6 +301,23 @@ $(function() {
         classNames: ['ui very relaxed stackable page grid'],
         tagName: 'div',
         templateName: 'android'
+    }, Murt.ScrollToMixin);
+    /************************ Android End *******************************************/
+
+    /************************************************************************************************************/
+
+    /************************ Android Start *******************************************/
+
+
+    Murt.VisualizationRoute = Ember.Route.extend({
+        model: function() {
+            updateMeta('Visualization', 'Visualize all results .', WEB_ROOT + '#!/visualization', 'visualization');
+        }
+    });
+    Murt.VisualizationView = Ember.View.extend({
+        classNames: ['ui very relaxed stackable page grid'],
+        tagName: 'div',
+        templateName: 'visualization'
     }, Murt.ScrollToMixin);
     /************************ Android End *******************************************/
 

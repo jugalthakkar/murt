@@ -1,6 +1,6 @@
 /* Put your CSS here */
 #home .masthead {
-    background-image: url(images/_bg.jpg);
+    background-image: url(images/bg.jpg);
 
 }
 @media only screen and (min-width: 1920px) {
@@ -39,10 +39,35 @@
     display:none;    
 }
 
-.mobile .ui.icon.header {
-    font-size: 0.8rem;
+.menu .header{
+    text-align:center;
 }
-.ui.menu .mobile  .item,.ui.menu .mobile.item{
-    padding: 0.2em;
+
+.ui.menu .item .icon {
+    font-size: 3.4rem;
 }
+
+.ui.inverted.menu,.ui.inverted.menu .header.item{
+    background-color: #000;
+}
+
+.ui.menu .item {
+    padding: .5em .5em;    
+    width:auto;
+    font-size: xx-small;
+}
+
+.ui.inverted.menu .header.item.title
+{
+    padding: 0px;
+    margin-top: 5px;
+}
+
+.ui.menu .title.item {    
+    width:50px;    
+}
+
+/*.fixed.menu img{
+    width: 30px;
+}*/
 

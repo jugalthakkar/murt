@@ -1,15 +1,21 @@
+<ifmodule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript application/javascript application/json
+</ifmodule>
 <IfModule mod_rewrite.c>
-    <IfModule mod_negotiation.c>
-        Options -MultiViews
-    </IfModule>
+RewriteEngine On
+RewriteBase /
 
-    RewriteEngine On
 
-    # Redirect Trailing Slashes...
-    RewriteRule ^(.*)/$ /$1 [L,R=301]
+RewriteRule exams/([0-9]+)/(.*) ExamDetails.php?exam_id=$1
+RewriteRule result/([0-9]+)/(.*) ExamDetails.php?exam_id=$1
+RewriteRule ([0-9]+)/(.*) ExamDetails.php?exam_id=$1
 
-    # Handle Front Controller...
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [L]
+RewriteRule ^JS/all.php /index.php?_escaped_fragment_=/results/300 [L,R=301]
+RewriteRule ^android(.*)$ /index.php?_escaped_fragment_=/android [L,R=301]
+RewriteRule ^visualization(.*)$ /index.php?_escaped_fragment_=/visualization [L,R=301]
+RewriteRule ^SL(.*)$ /index.php?_escaped_fragment_=/ [L,R=301]
+RewriteRule ^JS(.*)$ /index.php?_escaped_fragment_=/ [L,R=301]
+RewriteRule ^beta(.*)$ /index.php?_escaped_fragment_=/ [L,R=301]
+RewriteRule ^mobile(.*)$ /index.php?_escaped_fragment_=/ [L,R=301]
+
 </IfModule>
