@@ -3,6 +3,7 @@
 
 $(function() {
 
+    // <editor-fold defaultstate="collapsed" desc="Helpers" >     
     var WEB_ROOT = $('#WEB_ROOT').val();
 
     function prettifyName(name) {
@@ -16,10 +17,10 @@ $(function() {
 
     function updateMeta(title, description, url, image) {
         title = title + ' | Mumbai University Result Tracker | Jugal Thakkar';
+
         document.title = title;
         Ember.$('meta[name=canonical]').attr('href', url);
         Ember.$('meta[name=description]').attr('content', description);
-
         Ember.$('meta[property=og\\:title]').attr('content', title);
         Ember.$('meta[property=og\\:description]').attr('content', description);
         Ember.$('meta[property=og\\:url]').attr('content', url);
@@ -34,12 +35,19 @@ $(function() {
     Handlebars.registerHelper('readableTime', function(property, options) {
         return  moment(parseInt(Ember.get(options.data.view.content, property)) * 1000).fromNow();
     });
+
     Handlebars.registerHelper('longTime', function(property, options) {
         return  new Date(parseInt(Ember.get(options.data.view.content, property)) * 1000).toString();
     });
 
+    Handlebars.registerHelper('prettifyName', function(property, options) {
+        return  prettifyName(Ember.get(options.data.view.content, property));
+    });
 
-    /************************ Application Start *******************************************/
+
+    //</editor-fold>
+
+    // <editor-fold defaultstate="collapsed" desc="Application">     
 
     window.Murt = Ember.Application.create(
         {
@@ -98,7 +106,6 @@ $(function() {
     });
     Murt.ApplicationRoute = Ember.Route.extend({
         model: function() {
-            updateMeta('Latest Results', 'Track the latest Mumbai University Results as they happen. We have a history of being faster than the university site.Just Saying!', WEB_ROOT + '#!/', 'index');
             return {
                 currentYear: new Date().getFullYear(),
                 androidDownloadCount: $('#androidDownloadCount').val(),
@@ -131,12 +138,10 @@ $(function() {
                 });
         }.on('didInsertElement')
     });
-    /************************ Application End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
-    /************************ Index Start *******************************************/
-
+    // <editor-fold defaultstate="collapsed" desc="Index">   
 
     Murt.IndexView = Ember.View.extend({
         classNames: ['ui very relaxed stackable page grid'],
@@ -150,12 +155,10 @@ $(function() {
         }
     });
 
-    /************************ Index End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
-
-    /************************ Results Start *******************************************/
+    // <editor-fold defaultstate="collapsed" desc="Results">   
 
 
     Murt.ResultsView = Ember.View.extend({
@@ -171,13 +174,11 @@ $(function() {
         }
     });
 
-    /************************ Results End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
+    // <editor-fold defaultstate="collapsed" desc="Result">   
 
-
-    /************************ Result Start *******************************************/
 
     var months = moment().localeData()._months;
     var now = new Date();
@@ -212,14 +213,17 @@ $(function() {
 
     Murt.ResultRoute = Ember.Route.extend({
         model: function(params) {
-            updateMeta(params.ExamName, 'Result for ' + params.ExamName, WEB_ROOT + '#!/result/' + params.Id + '/' + params.ExamName, 'result');
-            return {
-                name: params.ExamName,
-                id: params.Id,
-                selectedMonth: monthOptions[0].value,
-                isInput: true,
-                isLoading: false
-            };
+            return Ember.$.getJSON(WEB_ROOT + 'Services.php?s=getExam&id=' + params.Id).then(function(response) {
+
+                updateMeta(response.ExamName, 'Result for ' + response.ExamName, WEB_ROOT + '#!/result/' + response.Id + '/' + prettifyName(response.ExamName), 'result');
+                return {
+                    name: response.ExamName,
+                    id: response.Id,
+                    selectedMonth: monthOptions[0].value,
+                    isInput: true,
+                    isLoading: false
+                };
+            });
         }
     });
     Murt.ResultView = Ember.View.extend({
@@ -283,13 +287,10 @@ $(function() {
         },
         monthOptions: monthOptions
     });
-    /************************ Result End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
-
-    /************************ Android Start *******************************************/
-
+    // <editor-fold defaultstate="collapsed" desc="Android">   
 
     Murt.AndroidRoute = Ember.Route.extend({
         model: function() {
@@ -302,16 +303,14 @@ $(function() {
         tagName: 'div',
         templateName: 'android'
     }, Murt.ScrollToMixin);
-    /************************ Android End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
-    /************************ Android Start *******************************************/
-
+    // <editor-fold defaultstate="collapsed" desc="Visualization">   
 
     Murt.VisualizationRoute = Ember.Route.extend({
         model: function() {
-            updateMeta('Visualization', 'Visualize all results .', WEB_ROOT + '#!/visualization', 'visualization');
+            updateMeta('Visualization', 'Visualize all results.', WEB_ROOT + '#!/visualization', 'visualization');
         }
     });
     Murt.VisualizationView = Ember.View.extend({
@@ -319,8 +318,7 @@ $(function() {
         tagName: 'div',
         templateName: 'visualization'
     }, Murt.ScrollToMixin);
-    /************************ Android End *******************************************/
 
-    /************************************************************************************************************/
+    // </editor-fold>
 
 });

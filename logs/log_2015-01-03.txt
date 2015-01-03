@@ -1,0 +1,96 @@
+2015-01-03 17:03:02 - INFO --> GetSnapshot - fragment: "/result/3372/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:03:02 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:03:02 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3372"
+2015-01-03 17:03:02 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => ""
+2015-01-03 17:03:22 - INFO --> RecreateSnapshots - Resetting snapshots
+2015-01-03 17:03:22 - INFO --> 
+2015-01-03 17:03:22 - INFO --> RecreateSnapshots: /=>index
+2015-01-03 17:03:22 - INFO --> CreateSnapshot: /=>Z:\sites\murt\snapshots\index.html
+2015-01-03 17:03:22 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/' 2>&1
+2015-01-03 17:03:29 - INFO --> CreateSnapshot - status: 0
+2015-01-03 17:03:29 - INFO --> RecreateSnapshots: /android=>android
+2015-01-03 17:03:29 - INFO --> CreateSnapshot: /android=>Z:\sites\murt\snapshots\android.html
+2015-01-03 17:03:29 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/android' 2>&1
+2015-01-03 17:03:32 - INFO --> CreateSnapshot - status: 0
+2015-01-03 17:03:32 - INFO --> RecreateSnapshots: /visualization=>visualization
+2015-01-03 17:03:32 - INFO --> CreateSnapshot: /visualization=>Z:\sites\murt\snapshots\visualization.html
+2015-01-03 17:03:32 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/visualization' 2>&1
+2015-01-03 17:03:37 - INFO --> CreateSnapshot - status: 0
+2015-01-03 17:03:37 - INFO --> RecreateSnapshots: /results/300=>results
+2015-01-03 17:03:37 - INFO --> CreateSnapshot: /results/300=>Z:\sites\murt\snapshots\results.html
+2015-01-03 17:03:37 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/results/300' 2>&1
+2015-01-03 17:03:41 - INFO --> CreateSnapshot - status: 0
+2015-01-03 17:03:41 - INFO --> RecreateSnapshots: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>result
+2015-01-03 17:03:41 - INFO --> CreateSnapshot: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>Z:\sites\murt\snapshots\result.html
+2015-01-03 17:03:41 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER' 2>&1
+2015-01-03 17:03:44 - INFO --> CreateSnapshot - status: 0
+2015-01-03 17:03:46 - INFO --> GetSnapshot - fragment: "/result/3372/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:03:46 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:03:46 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3372"
+2015-01-03 17:03:46 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => ""
+2015-01-03 17:04:39 - INFO --> GetSnapshot - fragment: "/result/2500/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:04:39 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:04:39 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "2500"
+2015-01-03 17:04:39 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => ""
+2015-01-03 17:04:55 - INFO --> GetSnapshot - fragment: "/result/3071/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:04:55 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:04:55 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3071"
+2015-01-03 17:04:55 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => "B.Sc. (CBSGS) (Chemistry,Life Sc.,Botany,Zoology,Micro-Bio,Bio-Chem,Bio-Tech)"
+2015-01-03 17:05:23 - INFO --> GetSnapshot - fragment: "/result/3071/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:05:23 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:05:23 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3071"
+2015-01-03 17:05:23 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => "B.Sc. (CBSGS) (Chemistry,Life Sc.,Botany,Zoology,Micro-Bio,Bio-Chem,Bio-Tech)"
+2015-01-03 17:06:57 - INFO --> GetSnapshot - fragment: "/result/3071/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:06:57 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:06:57 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3071"
+2015-01-03 17:06:57 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => "B.Sc. (CBSGS) (Chemistry,Life Sc.,Botany,Zoology,Micro-Bio,Bio-Chem,Bio-Tech)"
+2015-01-03 17:07:16 - INFO --> GetSnapshot - fragment: "/result/3071/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:07:16 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:07:16 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3071"
+2015-01-03 17:07:16 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => "B.Sc. (CBSGS) (Chemistry,Life Sc.,Botany,Zoology,Micro-Bio,Bio-Chem,Bio-Tech)"
+2015-01-03 17:16:43 - INFO --> GetSnapshot - fragment: "/result/3071/S.Y.B.Sc. Computer Scssaaaience (IDOL)"
+2015-01-03 17:16:43 - INFO --> GetSnapshot - file: "Z:\sites\murt\snapshots\result.html"
+2015-01-03 17:16:43 - INFO --> GetSnapshot - EXAM_ID_PLACEHOLDER => "3071"
+2015-01-03 17:16:43 - INFO --> GetSnapshot - EXAM_NAME_PLACEHOLDER => "B.Sc. (CBSGS) (Chemistry,Life Sc.,Botany,Zoology,Micro-Bio,Bio-Chem,Bio-Tech)"
+2015-01-03 18:56:22 - INFO --> RecreateSnapshots - Resetting snapshots
+2015-01-03 18:56:22 - INFO --> RecreateSnapshots: /=>index
+2015-01-03 18:56:22 - INFO --> CreateSnapshot: /=>Z:\sites\murt\snapshots\index.html
+2015-01-03 18:56:22 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/' 2>&1
+2015-01-03 18:56:26 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:26 - INFO --> RecreateSnapshots: /android=>android
+2015-01-03 18:56:26 - INFO --> CreateSnapshot: /android=>Z:\sites\murt\snapshots\android.html
+2015-01-03 18:56:26 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/android' 2>&1
+2015-01-03 18:56:31 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:31 - INFO --> RecreateSnapshots: /visualization=>visualization
+2015-01-03 18:56:31 - INFO --> CreateSnapshot: /visualization=>Z:\sites\murt\snapshots\visualization.html
+2015-01-03 18:56:31 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/visualization' 2>&1
+2015-01-03 18:56:37 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:37 - INFO --> RecreateSnapshots: /results/300=>results
+2015-01-03 18:56:37 - INFO --> CreateSnapshot: /results/300=>Z:\sites\murt\snapshots\results.html
+2015-01-03 18:56:37 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/results/300' 2>&1
+2015-01-03 18:56:41 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:41 - INFO --> RecreateSnapshots: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>result
+2015-01-03 18:56:41 - INFO --> CreateSnapshot: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>Z:\sites\murt\snapshots\result.html
+2015-01-03 18:56:41 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER' 2>&1
+2015-01-03 18:56:45 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:55 - INFO --> RecreateSnapshots - Resetting snapshots
+2015-01-03 18:56:55 - INFO --> RecreateSnapshots: /=>index
+2015-01-03 18:56:55 - INFO --> CreateSnapshot: /=>Z:\sites\murt\snapshots\index.html
+2015-01-03 18:56:55 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/' 2>&1
+2015-01-03 18:56:59 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:56:59 - INFO --> RecreateSnapshots: /android=>android
+2015-01-03 18:56:59 - INFO --> CreateSnapshot: /android=>Z:\sites\murt\snapshots\android.html
+2015-01-03 18:56:59 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/android' 2>&1
+2015-01-03 18:57:02 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:57:02 - INFO --> RecreateSnapshots: /visualization=>visualization
+2015-01-03 18:57:02 - INFO --> CreateSnapshot: /visualization=>Z:\sites\murt\snapshots\visualization.html
+2015-01-03 18:57:02 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/visualization' 2>&1
+2015-01-03 18:57:08 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:57:08 - INFO --> RecreateSnapshots: /results/300=>results
+2015-01-03 18:57:08 - INFO --> CreateSnapshot: /results/300=>Z:\sites\murt\snapshots\results.html
+2015-01-03 18:57:08 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/results/300' 2>&1
+2015-01-03 18:57:12 - INFO --> CreateSnapshot - status: 0
+2015-01-03 18:57:12 - INFO --> RecreateSnapshots: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>result
+2015-01-03 18:57:12 - INFO --> CreateSnapshot: /result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER=>Z:\sites\murt\snapshots\result.html
+2015-01-03 18:57:12 - INFO --> CreateSnapshot - Command: Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantomjs.exe --disk-cache=no Z:\UnShared\Tools\phantomjs-1.9.2-windows\phantom-server.js 'http://localhost/murt/#!/result/EXAM_ID_PLACEHOLDER/EXAM_NAME_PLACEHOLDER' 2>&1
+2015-01-03 18:57:16 - INFO --> CreateSnapshot - status: 0

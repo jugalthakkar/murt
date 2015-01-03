@@ -62,6 +62,27 @@ if (isset($_GET['s']))
         echo "Updated: " . date('l jS \of F Y h:i:s A');
         require_once("../includes/teardown.php");
     }
+    else if ($service == 'getExam')
+    {
+        require_once("../includes/initialize.php");
+        require_once("../includes/exams.php");
+        $id = isset($_GET['id']) ? $_GET['id'] : EXAM_ID_PLACEHOLDER;
+        $exam;
+        if ($id == EXAM_ID_PLACEHOLDER)
+        {
+            $exam = new exam();
+            $exam->ExamName = EXAM_NAME_PLACEHOLDER;
+            $exam->Id = $id;
+            $exam->Discovered = 0;
+        }
+        else
+        {
+            $exam = exam::GetByID($_GET['id']);
+        }
+
+        echo json_encode($exam);
+        require_once("../includes/teardown.php");
+    }
 //    else if ($service == 'updateSnapshot')
 //    {
 //        require_once("../includes/SnapshotService.php");

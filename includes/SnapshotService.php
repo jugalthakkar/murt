@@ -50,8 +50,11 @@ class SnapshotService {
         {
             $log->logInfo('GetSnapshot - EXAM_ID_PLACEHOLDER => "' . $tokens[2] . '"');
             $output = str_replace(EXAM_ID_PLACEHOLDER, $tokens[2], $output);
-            $log->logInfo('GetSnapshot - EXAM_NAME_PLACEHOLDER => "' . $tokens[3] . '"');            
-            $output = str_replace(EXAM_NAME_PLACEHOLDER, $tokens[3], $output);            
+            require_once ('exams.php');            
+            $exam=exam::GetByID($tokens[2]);
+            $log->logInfo('GetSnapshot - EXAM_NAME_PLACEHOLDER => "' . $exam->ExamName . '"');                        
+            $output = str_replace(EXAM_NAME_PLACEHOLDER, $exam->ExamName, $output);            
+            $output = str_replace(exam::prettify(EXAM_NAME_PLACEHOLDER), exam::prettify($exam->ExamName), $output);            
         }
         return $output;
     }
@@ -73,10 +76,10 @@ class SnapshotService {
     {
         global $log;
         $log->logInfo('RecreateSnapshots - Resetting snapshots');
-        $log->logInfo(passthru(SNAPSHOT_RESET_COMMAND));
+        //$log->logInfo(passthru(SNAPSHOT_RESET_COMMAND));
         foreach (self::$fragments as $snapshot => $fragment)
         {
-            $log->logInfo('RecreateSnapshots: ' . $fragment . '=>' . $snapshot);
+            $log->logInfo('RecreateSnapshots: ' . $fragment . '=>' . $snapshot);            
             self::CreateSnapshot($fragment, SNAPSHOT_ROOT . $snapshot . '.html');
         }
     }

@@ -18,7 +18,7 @@
             <tbody>
                 {{#each exam in model}}
                 <tr>
-                    <td>{{#link-to 'result' exam.Id exam.ExamName}}{{exam.ExamName}}{{/link-to}}</td>
+                    <td>{{#link-to 'result' exam.Id (prettifyName ExamName)}}{{exam.ExamName}}{{/link-to}}</td>
                     <td {{bind-attr data-epoch=exam.Discovered}} title="{{longTime Discovered}}">{{readableTime Discovered}}</td>
                 </tr>
                 {{/each}}

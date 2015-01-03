@@ -11,8 +11,8 @@ $exam = exam::GetByID($id);
 if ($exam == null)
 {
     $exam = new exam();
-    $exam->Id = 1;
-    $exam->ExamName = "Not Found";
+    $exam->Id = EXAM_ID_PLACEHOLDER;
+    $exam->ExamName = EXAM_NAME_PLACEHOLDER;
 }
-header("Location: " . WEB_ROOT . "#!/result/" . $exam->Id . "/" . $exam->ExamName, TRUE, 301);
+header("Location: " . $exam->getURL(), TRUE, 301);
 require_once("../includes/teardown.php");

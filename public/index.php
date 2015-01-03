@@ -83,8 +83,6 @@ require_once("../includes/meta.php");
         <input type="hidden" name="hitCount" id="hitCount" value="<?php echo HitCounter::getHitCountForURI("/");//TODO                           ?>" />
         <input type="hidden" id="androidDownloadCount" value="<?php echo meta::getValue("apk_download_count"); ?>" />            
         <input type="hidden" id="WEB_ROOT" value='<?php echo WEB_ROOT; ?>' />
-
-
         <?php require_once('../templates/handleBarTemplates.php'); ?>
         <script src="js/libs/jquery-1.11.2.min.js"></script>
         <script src="js/libs/semantic.min.js"></script>
